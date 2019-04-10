@@ -12,7 +12,8 @@ enablePin  19   LV4    G (is NOT ground)
 #include <SPI.h>
 static const int spiClk = 500000; // in KHz
 
-int pinOrder[4] = {0, 1, 2, 3};
+int pinOrder[4] = {1, 2, 0, 3};
+// 1 2 0 3 wooooooooooooo!
 
 bool steps[8][4] = {
   {0, 0, 0, 1},
@@ -38,13 +39,13 @@ int stepsPerRevolution = 4096;
 //This number depends on the motor
 int stepsPerFlap = 256;
 
-float revolutionsPerMinute = 16;  //about 18rpm is the max, 16 is a good pick
+float revolutionsPerMinute = 15.0;  //about 18rpm is the max, 16 is a good pick
 float stepsPerSecond = (revolutionsPerMinute/60.0) * (float)stepsPerRevolution;
 float secondsPerStep = 1.0/stepsPerSecond;
 int microsecondsPerStep = (int)(secondsPerStep * 1000000.0);
 //
 int goalInterval = microsecondsPerStep; //in uS
-int initialInterval = 2500; //5 rpm ~3,000 uS
+int initialInterval = 5000; //5 rpm ~3,000 uS
 int currentInterval = initialInterval;
 SPIClass * vspi = NULL;
 
@@ -156,6 +157,15 @@ void moveIfNecessary() {
     isOff = false;
     unsigned long now = micros();
     if (now - lastStepTime > currentInterval) {
+      if (startStep == totalSteps) {
+        Serial.print("Ok, start move. Going from step ");
+        Serial.print(startStep);
+        Serial.print(" to step ");
+        Serial.print(goalSteps);
+        Serial.print(" (");
+        Serial.print(goalSteps - startStep);
+        Serial.println(" steps)");
+      }
       totalSteps = totalSteps + 1;
       updateShiftRegister(outputBytes[stepIndex]);
       lastStepTime = now;
