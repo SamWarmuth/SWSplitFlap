@@ -43,9 +43,11 @@ float revolutionsPerMinute = 15.0;  //about 18rpm is the max, 16 is a good pick
 float stepsPerSecond = (revolutionsPerMinute/60.0) * (float)stepsPerRevolution;
 float secondsPerStep = 1.0/stepsPerSecond;
 int microsecondsPerStep = (int)(secondsPerStep * 1000000.0);
-//
+
+//10 rpm ~1,500 uS
+
 int goalInterval = microsecondsPerStep; //in uS
-int initialInterval = 5000; //5 rpm ~3,000 uS
+int initialInterval = goalInterval; //Something weird happened with acc, turn off for now  
 int currentInterval = initialInterval;
 SPIClass * vspi = NULL;
 
@@ -115,7 +117,9 @@ void loop() {
   }
 }
 
-int hallPosition = 10 * stepsPerFlap + 50; //can be anything from 0 - 4096 (stepsPerRevolution), but will have absolute value issues near edges.
+//can be anything from 0 - 4096 (stepsPerRevolution), but will have absolute value issues near edges.
+int hallPosition = 10 * stepsPerFlap - 10; 
+
 
 int lastHall = 0;
 int skippedSteps = 0;
