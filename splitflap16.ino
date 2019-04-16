@@ -1,10 +1,19 @@
 /*
-var        ESP  shift  TPIC
+var        ESP        shift  TPIC
 ----------------------------
-clockPin   18   LV1    SRCK   
-latchPin   5    LV2    RCK
-dataPin    23   LV3    SER IN
-enablePin  19   LV4    G (is NOT ground)
+clockPin   18 CLK     LV1    SRCK   
+latchPin   5  CS0/SS  LV2    RCK
+dataPin    23 MOSI    LV3    SER IN
+enablePin  19 GPIO    LV4    G (is NOT ground)
+
+
+var        ATTiny    TPIC
+----------------------------
+clockPin   13 SCK    SRCK   
+latchPin   10 SS     RCK
+dataPin    17 MOSI   SER IN
+enablePin   9 GPIO   G (is NOT ground)
+
 */
 
 
