@@ -61,9 +61,10 @@ const int goalInterval = microsecondsPerStep;
 void setup() {
   Wire.begin(chipID);
   Wire.onReceive(receiveMessage); // register event
-
+  Wire.onRequest(sendMessage);
+  
   pinMode(hallPin, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(hallPin), hallInterrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(hallPin), hallInterrupt, FALLING);
   SPI.begin();
   pinMode(ledPin, OUTPUT);
 
@@ -120,10 +121,16 @@ void loop() {
 }
 
 void receiveMessage(int howMany) {
+  if (Wire.available() < 3) return;
   int type = Wire.read(); //ignore, always move for now
   int high = (int)Wire.read(); // Store as int to prepare for shifting
   byte low = Wire.read();
+  
   goToLocation((high << 8) + low);
+}
+
+void sendMessage() {
+  Wire.write("ATTiny");
 }
 
 //can be anything from 0 - 4096 (stepsPerRevolution)
