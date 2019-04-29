@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /Users/samwarmuth/Documents/splitflap/splitflap-pcb/splitflap-pcb.sch)
-    (date "Monday, April 29, 2019 at 12:46:38 PM")
+    (date "Monday, April 29, 2019 at 01:05:41 PM")
     (tool "Eeschema (5.1.0-0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -80,7 +80,7 @@
       (tstamp 5CC10A0D))
     (comp (ref U1)
       (value REGULATOR)
-      (footprint Package_TO_SOT_SMD:TO-252-3_TabPin2)
+      (footprint Package_TO_SOT_SMD:TO-252-2)
       (datasheet http://www.advanced-monolithic.com/pdf/ds1117.pdf)
       (libsource (lib Regulator_Linear) (part LF50_TO252) (description "Low-drop Voltage Regulator, Io up to 500mA, Fixed Vo 5.0V, TO-252 (DPAK)"))
       (sheetpath (names /) (tstamps /))
