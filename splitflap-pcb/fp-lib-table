@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name splitflap-pcb)(type KiCad)(uri ${KIPRJMOD}/splitflap-pcb.pretty)(options "")(descr ""))
+  (lib (name 640456-3)(type Legacy)(uri ${KIPRJMOD}/custom_components/640456-3.mod)(options "")(descr ""))
+)

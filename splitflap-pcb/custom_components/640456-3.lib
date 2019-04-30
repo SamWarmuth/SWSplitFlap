@@ -1,0 +1,59 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# 640456-3
+#
+DEF 640456-3 J 0 40 Y Y 1 L N
+F0 "J" -100 220 50 H V L BNN
+F1 "640456-3" -100 -300 50 H V L BNN
+F2 "CONN_640456-3" 0 0 50 H I L BNN
+F3 "Tin" 0 0 50 H I L BNN
+F4 "Through Hole" 0 0 50 H I L BNN
+F5 "5 A" 0 0 50 H I L BNN
+F6 "" 0 0 50 H I L BNN
+F7 "W3" 0 0 50 H I L BNN
+F8 "header" 0 0 50 H I L BNN
+F9 "" 0 0 50 H I L BNN
+F10 "" 0 0 50 H I L BNN
+F11 "" 0 0 50 H I L BNN
+F12 "" 0 0 50 H I L BNN
+F13 "REVISED PER ECR-15-014064" 0 0 50 H I L BNN
+F14 "03 MAR 2016" 0 0 50 H I L BNN
+F15 "11 JUN 2004" 0 0 50 H I L BNN
+F16 "2.54" 0 0 50 H I L BNN
+F17 "640456-3" 0 0 50 H I L BNN
+F18 "SINGLE ROW" 0 0 50 H I L BNN
+F19 "conn, header, 2.54mm, 3 POS" 0 0 50 H I L BNN
+F20 "TE connectivity" 0 0 50 H I L BNN
+F21 "" 0 0 50 H I L BNN
+F22 "Header" 0 0 50 H I L BNN
+F23 "" 0 0 50 H I L BNN
+F24 "640456-3" 0 0 50 H I L BNN
+F25 "" 0 0 50 H I L BNN
+F26 "" 0 0 50 H I L BNN
+F27 "" 0 0 50 H I L BNN
+F28 "" 0 0 50 H I L BNN
+F29 "Manufacturer recommendations" 0 0 50 H I L BNN
+F30 "" 0 0 50 H I L BNN
+F31 "Male Pin" 0 0 50 H I L BNN
+F32 "3" 0 0 50 H I L BNN
+F33 "MTA-100" 0 0 50 H I L BNN
+F34 "http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F640456%7FW3%7Fpdf%7FEnglish%7FENG_CD_640456_W3.pdf%7F640456-3" 0 0 50 H I L BNN
+F35 "" 0 0 50 H I L BNN
+F36 "yes" 0 0 50 H I L BNN
+F37 "" 0 0 50 H I L BNN
+F38 "TE connectivity" 0 0 50 H I L BNN
+DRAW
+P 2 0 0 6 -100 200 -100 -200 N
+P 2 0 0 6 -100 -200 100 -200 N
+P 2 0 0 6 100 -200 100 200 N
+P 2 0 0 6 100 200 -100 200 N
+X 1 3 -200 100 100 R 40 40 0 0 P 
+X 2 2 -200 0 100 R 40 40 0 0 P 
+X 3 1 -200 -100 100 R 40 40 0 0 P 
+ENDDRAW
+ENDDEF
+#
+# End Library
