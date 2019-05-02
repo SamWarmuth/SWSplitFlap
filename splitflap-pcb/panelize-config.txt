@@ -1,4 +1,4 @@
-load example.kicad_pcb
+load splitflap-pcb.kicad_pcb
 source-area 100 100 150 133.3
 copy 0 0
 copy 50 0
