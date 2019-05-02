@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
 #
 # This file is part of Tin's Kicad Tools.
 # Copyright (c) 2016, Martin Furter <mf@borg.ch>
