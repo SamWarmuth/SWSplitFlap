@@ -170,7 +170,7 @@ class Int( KicadObj ):
 		self.value = value
 
 	def tag_value( self, factory, value ):
-		self.value = int(value)
+		self.value = int(float(value))
 
 	def clone( self ):
 		return Int( self.obj_name, self.value )
@@ -872,6 +872,7 @@ class GrCircle( KicadFatObj ):
 			Vector( "end" ),
 			Text( "layer" ),
 			Float( "width" ),
+			Text( "tstamp" ),
 		) )
 
 	def is_inside( self, area ):
@@ -1225,6 +1226,7 @@ class Pad( KicadFatObj ):
 			Float( "clearance" ),
 			Net( "net" ),
 			Int( "zone_connect" ),
+			Float( "roundrect_rratio" )
 		) )
 		self.nr = None
 		self.kind = None
@@ -1250,6 +1252,7 @@ class Pad( KicadFatObj ):
 			"size",
 			"drill",
 			"layers",
+			"roundrect_rratio"
 		), False )
 		if self.rect_delta.is_set():
 			self.write_objects( writer, ("rect_delta",), False )
@@ -1298,6 +1301,7 @@ class Model( KicadFatObj ):
 			NamedVector3D( "at" ),
 			NamedVector3D( "scale" ),
 			NamedVector3D( "rotate" ),
+			NamedVector3D( "offset" ),
 		) )
 		self.filename = None
 
@@ -1528,6 +1532,9 @@ class PcbPlotParams( KicadFatObj ):
 			Int( "drillshape" ),
 			Int( "scaleselection" ),
 			Text( "outputdirectory" ),
+			Text( "usegerberattributes" ),
+			Text( "usegerberadvancedattributes" ),
+			Text( "creategerberjobfile" )
 		) )
 
 	def init_defaults( self ):
@@ -1567,7 +1574,8 @@ class PcbPlotParams( KicadFatObj ):
 			"psa4output", "plotreference", "plotvalue",
 			"plotinvisibletext", "padsonsilk", "subtractmaskfromsilk",
 			"outputformat", "mirror", "drillshape", "scaleselection",
-			"outputdirectory",
+			"outputdirectory", "usegerberattributes",
+			"usegerberadvancedattributes", "creategerberjobfile"
 		) )
 		# writer.newline()
 		writer.end()
@@ -1592,6 +1600,7 @@ class Setup( KicadFatObj ):
 			Float( "via_drill" ),
 			Float( "via_min_size" ),
 			Float( "via_min_drill" ),
+			Float( "solder_mask_min_width" ),
 			Float( "uvia_size" ),
 			Float( "uvia_drill" ),
 			YesNo( "uvias_allowed" ),
@@ -1663,7 +1672,7 @@ class Setup( KicadFatObj ):
 			"mod_edge_width", "mod_text_size", "mod_text_width",
 			"pad_size", "pad_drill", "pad_to_mask_clearance",
 			"pad_to_paste_clearance", "aux_axis_origin", "grid_origin",
-			"visible_elements", "pcbplotparams"
+			"visible_elements", "pcbplotparams", "solder_mask_min_width"
 		) )
 		writer.newline()
 		writer.end()

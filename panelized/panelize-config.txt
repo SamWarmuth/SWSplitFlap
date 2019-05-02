@@ -1,0 +1,10 @@
+load splitflap-pcb.kicad_pcb
+source-area 100 100 150 133.3
+new
+copy 0 0
+copy 50 0
+copy 0 33.3
+copy 50 33.3
+copy 0 66.6
+copy 50 66.6
+save panelized.kicad_pcb
