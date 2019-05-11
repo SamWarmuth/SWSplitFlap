@@ -18,8 +18,8 @@ byte chipID = 8; // any number from 8-127
 
 static const int spiClk = 1000000; // in KHz
 
-int pinOrder[4] = {3, 2, 1, 0};
-int pinOrder2[4] = {0, 1, 2, 3};
+int pinOrder[4] = {0, 1, 2, 3};
+int pinOrder2[4] = {3, 2, 1, 0};
 
 bool steps[8][4] = {
   {0, 0, 0, 1},
