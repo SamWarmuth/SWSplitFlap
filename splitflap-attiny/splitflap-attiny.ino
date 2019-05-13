@@ -18,8 +18,12 @@ byte chipID = 8; // any number from 8-127
 
 static const int spiClk = 1000000; // in KHz
 
-int pinOrder[4] = {0, 1, 2, 3};
-int pinOrder2[4] = {3, 2, 1, 0};
+int pinOrders [2][4] = {
+  {3, 2, 1, 0},
+  {0, 1, 2, 3}
+};
+int pinOrderA = 0; //index of pinOrders above, e.g. pinOrders[0];
+int pinOrderB = 0;
 
 bool steps[8][4] = {
   {0, 0, 0, 1},
@@ -79,8 +83,8 @@ void setup() {
     byte combined = 0;
     for (int bitIndex = 0; bitIndex < 4; bitIndex++) {
       if (steps[index][bitIndex]) {
-        bitSet(combined, pinOrder[bitIndex]);
-        bitSet(combined, pinOrder2[bitIndex] + 4);
+        bitSet(combined, pinOrders[pinOrderA][bitIndex]);
+        bitSet(combined, pinOrders[pinOrderB][bitIndex] + 4);
       }
     }
     outputBytes[index] = combined;
@@ -147,7 +151,7 @@ void hallInterrupt() {
 
 void turnOffStepper() {
   byte off = 0;
-  //updateShiftRegister(off);
+  updateShiftRegister(off);
 }
 
 void updateShiftRegister(byte output) {
