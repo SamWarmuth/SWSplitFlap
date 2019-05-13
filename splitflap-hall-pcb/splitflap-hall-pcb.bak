@@ -1,0 +1,101 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Sensor_Magnetic:AH1806-W U1
+U 1 1 5CD98B85
+P 2850 3400
+F 0 "U1" H 2621 3446 50  0000 R CNN
+F 1 "AH1806-W" H 2650 3550 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SC-59" H 3400 3050 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/AH1806.pdf" H 2850 3400 50  0001 C CNN
+	1    2850 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J1
+U 1 1 5CD99404
+P 4350 3400
+F 0 "J1" V 4150 3400 50  0000 C CNN
+F 1 "Conn_01x03_Male" V 4250 3400 50  0000 C CNN
+F 2 "" H 4350 3400 50  0001 C CNN
+F 3 "~" H 4350 3400 50  0001 C CNN
+	1    4350 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5CD99F06
+P 2150 3400
+F 0 "C1" H 2265 3446 50  0000 L CNN
+F 1 "0.1uF" H 2265 3355 50  0000 L CNN
+F 2 "" H 2188 3250 50  0001 C CNN
+F 3 "~" H 2150 3400 50  0001 C CNN
+	1    2150 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 3000 2150 3000
+Wire Wire Line
+	2150 3000 2150 3250
+Wire Wire Line
+	2150 3550 2150 3800
+Wire Wire Line
+	2150 3800 2850 3800
+Wire Wire Line
+	2850 3000 3850 3000
+Wire Wire Line
+	3850 3000 3850 3300
+Wire Wire Line
+	3850 3300 4100 3300
+Connection ~ 2850 3000
+Wire Wire Line
+	3150 3400 4150 3400
+Wire Wire Line
+	2850 3800 3850 3800
+Wire Wire Line
+	3850 3800 3850 3500
+Connection ~ 2850 3800
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5CD9DF0A
+P 4100 3300
+F 0 "#FLG?" H 4100 3375 50  0001 C CNN
+F 1 "PWR_FLAG" H 4100 3473 50  0000 C CNN
+F 2 "" H 4100 3300 50  0001 C CNN
+F 3 "~" H 4100 3300 50  0001 C CNN
+	1    4100 3300
+	1    0    0    -1  
+$EndComp
+Connection ~ 4100 3300
+Wire Wire Line
+	4100 3300 4150 3300
+Wire Wire Line
+	4050 3500 4150 3500
+Wire Wire Line
+	3850 3500 4050 3500
+Connection ~ 4050 3500
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5CD9E4B3
+P 4050 3500
+F 0 "#FLG?" H 4050 3575 50  0001 C CNN
+F 1 "PWR_FLAG" H 4050 3673 50  0000 C CNN
+F 2 "" H 4050 3500 50  0001 C CNN
+F 3 "~" H 4050 3500 50  0001 C CNN
+	1    4050 3500
+	-1   0    0    1   
+$EndComp
+$EndSCHEMATC
