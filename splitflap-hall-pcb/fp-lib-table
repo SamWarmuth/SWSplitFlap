@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name splitflap-hall-pcb)(type KiCad)(uri ${KIPRJMOD}/splitflap-hall-pcb.pretty)(options "")(descr ""))
+)
